@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srivilliputhur Grizzled Squirrel Sanctuary</title>
+    <style>
+        body {
+            background-image: url('n3.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            color: white;
+        }
+
+        .title {
+            color: #c8e6c9;
+            font-size: 32px;
+            text-align: center;
+            margin-top: 30px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(0, 255, 100, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #76ff03, #64dd17);
+            width: 80%;
+            margin: 15px auto 25px;
+            border-radius: 2px;
+        }
+
+        .menu {
+            text-align: center;
+            padding: 10px 0 25px;
+            font-size: 18px;
+        }
+
+        .menu a {
+            color: #e8f5e9;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .menu a:hover, .menu a.active {
+            background-color: rgba(118, 255, 3, 0.3);
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(118, 255, 3, 0.5);
+        }
+
+        section {
+            display: none;
+            width: 80%;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            color: #b9f6ca;
+            font-size: 28px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            text-align: justify;
+            color: #f1f8e9;
+        }
+
+        b {
+            color: #b2ff59;
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            margin-top: 20px;
+            color: #fff7d1;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input, textarea {
+            width: 70%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        ::placeholder {
+            color: #c8e6c9;
+        }
+
+        button {
+            background: linear-gradient(to right, #76ff03, #64dd17);
+            color: black;
+            padding: 12px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(118, 255, 3, 0.5);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #c8e6c9;
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 🌐 MOBILE FRIENDLY SECTION */
+   /* 🌐 MOBILE FRIENDLY SECTION */
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px;
+        margin: 20px 10px;
+        line-height: 1.3;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .menu a {
+        margin: 5px auto;
+        padding: 10px 15px;
+        width: 80%;
+    }
+
+    section {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input, textarea {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    button {
+        width: 70%;
+        font-size: 16px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+            /* Flora & Fauna Section Container */
+.flora-fauna-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/* Flora Section Styling */
+.flora {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    width: 48%;
+    color: #fff;
+}
+
+.flora h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #b2ff59;
+    margin-bottom: 15px;
+}
+
+.flora ul {
+    padding-left: 20px;
+}
+
+.flora li {
+    margin: 10px 0;
+}
+
+/* Fauna Section Styling */
+.fauna {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    width: 48%;
+    color: #fff;
+}
+
+.fauna h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #b2ff59;
+    margin-bottom: 15px;
+}
+
+.fauna h4 {
+    color: #c8e6c9;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.fauna ul {
+    padding-left: 20px;
+}
+
+.fauna li {
+    margin: 10px 0;
+}
+
+/* Enhance mobile responsiveness */
+@media (max-width: 768px) {
+    .flora-fauna-container {
+        flex-direction: column;
+    }
+
+    .flora, .fauna {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <h1 class="title">SRIVILLIPUTHUR GRIZZLED SQUIRREL WILDLIFE SANCTUARY</h1>
+    <hr>
+
+    <div class="menu">
+        <a href="#" class="active" onclick="showSection('home', this)">HOME</a>
+        <a href="#" onclick="showSection('about', this)">ABOUT</a>
+        <a href="#" onclick="showSection('flora', this)">FLORA & FAUNA</a>
+        <a href="#" onclick="showSection('visitor', this)">VISITOR INFORMATION</a>
+        <a href="#" onclick="showSection('contact', this)">CONTACT</a>
+    </div>
+
+ <section id="home" class="active">
+        <h2>Welcome to Srivilliputhur Grizzled Squirrel Wildlife Sanctuary</h2>
+        <hr>
+        <p>
+            Nestled in the lush green hills of Tamil Nadu, the <b>Srivilliputhur Grizzled Squirrel Wildlife Sanctuary</b> is a treasure of biodiversity and scenic beauty.
+            Established to protect the endangered <b>Grizzled Giant Squirrel (Ratufa macroura)</b>, this sanctuary stands as a symbol of wildlife conservation and natural harmony.
+        </p>
+        <p>
+            Spanning across the <b>Western Ghats</b>, the sanctuary offers visitors a chance to witness a rich variety of flora and fauna — including elephants, leopards, deer, monkeys, and countless species of birds and butterflies.
+        </p>
+        <p class="quote">“Let’s protect nature, because when we save wildlife — we save our planet.”</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Srivilliputhur Sanctuary</h2>
+        <hr>
+        <h2>About Srivilliputhur Grizzled Squirrel Wildlife Sanctuary</h2>
+        <hr>
+        <p>
+            The <b>Srivilliputhur Grizzled Squirrel Wildlife Sanctuary</b> is a beautiful protected forest area in 
+            <b>Tamil Nadu</b>, near the town of Srivilliputhur. It was started in <b>1988</b> to protect the 
+            <b>Grizzled Giant Squirrel</b>, a rare and endangered animal found only in a few parts of South India and Sri Lanka.
+        </p>
+        <p>
+            The sanctuary covers about <b>480 square kilometers</b> and has thick forests, hills, rivers, and waterfalls. 
+            It is home to many wild animals like <b>elephants, leopards, monkeys, deer</b>, and different kinds of 
+            <b>birds and butterflies</b>.
+        </p>
+        <p>
+            This sanctuary is very important because it helps to <b>protect wildlife</b> and keep nature safe. 
+            It also connects with nearby forests like <b>Periyar Tiger Reserve</b> and 
+            <b>Megamalai Wildlife Sanctuary</b>, allowing animals to move freely in their natural habitat.
+        </p>
+        <p>
+            People visit this place to enjoy the beauty of nature, <b>go trekking, watch birds</b>, and learn more 
+            about forest life and animal conservation.
+        </p>    
+        <p class="footer-note">🌿 Preserving nature today ensures a greener tomorrow.</p>
+    </section>
+
+    <section id="flora">
+    <h2>Flora & Fauna — Detailed Guide</h2>
+    <hr>
+    <p>
+        The <b>Srivilliputhur Grizzled Squirrel Wildlife Sanctuary</b> is a biodiversity hotspot nestled within the <b>Southern Western Ghats</b>.
+        It harbours an exceptional variety of <b>flora and fauna</b> — from dense tropical forests and aromatic shrubs to rare and endangered animal species.
+        This sanctuary is not only home to the <b>Grizzled Giant Squirrel</b> but also to countless other life forms that coexist in harmony.
+    </p>
+
+    <div class="flora-fauna-container">
+        <div class="flora">
+            <h3 style="color:#b2ff59;">🌿 FLORA (Plant Life)</h3>
+            <p>
+                The vegetation of the sanctuary varies with altitude and climate, ranging from <b>evergreen forests</b> at higher elevations to <b>dry deciduous forests</b> in the lower regions.
+            </p>
+            <ul>
+                <li><b>Tropical Evergreen Trees:</b> Found in moist areas — <i>Hopea parviflora</i>, <i>Mesua ferrea</i>, <i>Terminalia paniculata</i>, and <i>Pterocarpus marsupium</i>.</li>
+                <li><b>Deciduous Trees:</b> Species like <i>Tectona grandis</i> (Teak), <i>Terminalia arjuna</i>, <i>Anogeissus latifolia</i>, and <i>Dalbergia latifolia</i> dominate these forests.</li>
+                <li><b>Flowering Plants:</b> The sanctuary bursts with color during the blooming season with <i>Ixora</i>, <i>Clerodendrum</i>, <i>Strobilanthes</i>, and <i>Hibiscus</i> varieties.</li>
+            </ul>
+        </div>
+
+        <div class="fauna">
+            <h3 style="color:#b2ff59;">🦋 FAUNA (Animal Life)</h3>
+            <p>
+                The Srivilliputhur Sanctuary is world-renowned for protecting the endangered <b>Grizzled Giant Squirrel (Ratufa macroura)</b>. Apart from this flagship species, the sanctuary supports an impressive range of mammals, birds, reptiles, and insects.
+            </p>
+            <div class="fauna-list">
+                <h4 style="color:#c8e6c9;">🐿️ Mammals</h4>
+                <ul>
+                    <li><b>Grizzled Giant Squirrel:</b> Known for its silvery-gray fur and long bushy tail.</li>
+                    <li><b>Indian Elephant:</b> Large herds migrate seasonally through the forest corridors.</li>
+                    <li><b>Sloth Bear:</b> Seen in rocky terrain and dry deciduous forests.</li>
+                </ul>
+                <h4 style="color:#c8e6c9;">🕊️ Birds</h4>
+                <ul>
+                    <li><b>Great Indian Hornbill:</b> Iconic yellow casque makes it a symbol of the Western Ghats.</li>
+                    <li><b>Peafowl, Malabar Whistling Thrush:</b> These and other species grace the sanctuary.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- VISITOR INFO -->
+<section id="visitor">
+    <h2>Visitor Information</h2>
+    <p>The Srivilliputhur Grizzled Giant Squirrel Sanctuary welcomes nature lovers, photographers, and wildlife enthusiasts all year round. However, the best time to visit is <strong>from October to March</strong> when the weather is pleasant, and the forest is lush and active with wildlife.</p>
+
+    <h3>🌿 Visiting Hours</h3>
+    <ul>
+        <li><strong>Open:</strong> 6:00 AM to 5:00 PM</li>
+        <li><strong>Closed:</strong> During heavy monsoon days (check locally)</li>
+    </ul>
+
+    <h3>🎟️ Entry Fee</h3>
+    <ul>
+        <li>Adults: ₹30 per person</li>
+        <li>Children (below 10 years): Free</li>
+        <li>Camera Fee: ₹50</li>
+        <li>Video Camera: ₹150</li>
+    </ul>
+
+    <h3>🚌 How to Reach</h3>
+    <p>
+        The sanctuary is about <strong>15 km from Srivilliputhur town</strong> in Tamil Nadu.  
+        - Nearest Railway Station: Srivilliputhur (15 km)  
+        - Nearest Airport: Madurai (100 km)  
+        - Bus Service: Regular buses available from Srivilliputhur and Madurai.
+    </p>
+
+    <h3>📍 Location Map</h3>
+    <div style="text-align:center;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.447370593388!2d77.63328607492156!3d9.512380790563672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06d37dacfccc2b%3A0x6dc17ef41270b7a4!2sSrivilliputhur%20Grizzled%20Squirrel%20Wildlife%20Sanctuary!5e0!3m2!1sen!2sin!4v1730556829374!5m2!1sen!2sin" 
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius:15px; margin: 20px 0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <h3>🏕️ Things to Do</h3>
+    <ul>
+        <li>Nature walk & bird watching</li>
+        <li>Wildlife photography (especially giant squirrels)</li>
+        <li>Explore nearby hills and waterfalls</li>
+        <li>Visit the famous Andal Temple in Srivilliputhur</li>
+    </ul>
+
+    <h3>⚠️ Visitor Guidelines</h3>
+    <ul>
+        <li>Do not feed animals or litter inside the sanctuary.</li>
+        <li>Photography is allowed only in permitted zones.</li>
+        <li>Wear comfortable shoes and carry water.</li>
+        <li>Follow the instructions of forest officials.</li>
+    </ul>
+
+    <p class="footer-note">🌱 Respect nature — take only memories, leave only footprints.</p>
+</section>
+
+
+        <section id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align:center;">We’d love to hear from you! Send us your feedback, questions, or suggestions below.</p>
+        <form onsubmit="alert('✅ Thank you for contacting us! We’ll get back to you soon.'); this.reset(); return false;">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea rows="5" name="message" placeholder="Your Message..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p class="footer-note">🌿 Together, we can protect nature for future generations.</p>
+    </section>
+
+    <script>
+        function showSection(id, link) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+        }
+    </script>
+</body>
+</html>
